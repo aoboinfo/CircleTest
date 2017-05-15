@@ -1,0 +1,14 @@
+machine:
+  java:
+    version: oraclejdk8
+
+dependencies:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter "android-25,build-tools-25.0.3"
+
+test:
+  override:
+    - ./gradlew app:assembleDebug
+    - ./gradlew app:test
+  post:
+    - cp -r app/build/test-results/* $CIRCLE_TEST_REPORTS
