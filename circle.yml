@@ -1,3 +1,6 @@
+general:
+  artifacts:
+    - "app/build/reports/tests"
 machine:
   java:
     version: oraclejdk8
@@ -13,4 +16,4 @@ test:
     - ./gradlew app:assembleDebug
     - ./gradlew app:test
   post:
-    - cp -r build/report/* $CIRCLE_TEST_REPORTS/
+    - cp -r app/build/report/* $CIRCLE_TEST_REPORTS/
