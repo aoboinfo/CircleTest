@@ -1,6 +1,8 @@
 machine:
   java:
     version: oraclejdk8
+  timezone:
+    Asia/Tokyo
 
 dependencies:
   pre:
@@ -11,4 +13,4 @@ test:
     - ./gradlew app:assembleDebug
     - ./gradlew app:test
   post:
-    - cp -r app/build/test-results/* $CIRCLE_TEST_REPORTS
+    - cp -r build/report/* $CIRCLE_TEST_REPORTS/
