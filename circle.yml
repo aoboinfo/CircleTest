@@ -15,5 +15,6 @@ test:
   override:
     - ./gradlew app:assembleDebug
     - ./gradlew app:test
+    - ./gradlew app:androidTest
   post:
     - cp -r app/build/reports/* $CIRCLE_TEST_REPORTS/
